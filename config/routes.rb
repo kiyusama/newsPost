@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users
+  get 'pages/index'
   get 'articles/index'
   get 'articles/show'
   get 'articles/new'
@@ -11,4 +13,6 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "posts#index"
+
+  root "pages#index"
 end
