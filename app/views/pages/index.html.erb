@@ -1,3 +1,9 @@
 <h1>Pages#index</h1>
+<% unless user_signed_in? %>
+    <%= button_to '新規登録', new_user_registration_path, method: :get %>
+    <%= button_to 'ログイン', new_user_session_path, method: :get %>
+<% else %>
+    <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% end %>
 <%= link_to'View News', articles_index_path %>
 <p>Find me in app/views/pages/index.html.erb</p>

@@ -1,2 +1,21 @@
 <h1>Articles#show</h1>
-<p>Find me in app/views/articles/show.html.erb</p>
+<div>
+    <p>タイトル</p>
+    <%= @article.title %>
+</div>
+<div>
+    <p>本文</p>
+    <%= @article.body %>
+</div>
+<div>
+    <p>ジャンル</p>
+    <%= @article.genre %>
+</div>
+<div>
+    <%= link_to 'Edit', edit_article_path(@article) %>
+</div>
+<div>
+    <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+</div>
+
+<%= link_to 'Back', articles_index_path %>

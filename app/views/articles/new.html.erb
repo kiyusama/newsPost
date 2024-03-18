@@ -1,2 +1,19 @@
 <h1>Articles#new</h1>
-<p>Find me in app/views/articles/new.html.erb</p>
+<%= form_with model:@article, local: true do |form| %>
+    <div>
+        <%= form.label :title, "タイトル" %>
+        <%= form.text_field :title %>
+    </div>
+    <div>
+        <%= form.label :body, "本文" %>
+        <%= form.text_area :body %>
+    </div>
+    <div>
+        <%= form.label :genre, "ジャンル" %>
+        <%= form.select :genre, [['ニュース', 'news'], ['スポーツ', 'sports'], ['エンターテインメント', 'entertainment']] %>
+    </div>
+
+    <div>
+        <%= form.submit "投稿する" %>
+    </div>
+<% end %>
