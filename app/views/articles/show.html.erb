@@ -16,6 +16,7 @@
 </div>
 <div>
     <%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+    <%= link_to '削除', article_path(@article), data: { turbo_method: :delete } %>
 </div>
 
 <%= link_to 'Back', articles_index_path %>
